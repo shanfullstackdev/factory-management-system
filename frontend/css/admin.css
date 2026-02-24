@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  height: 100vh;
+}
+
+.login-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* LEFT PANEL */
+.left-panel {
+  width: 50%;
+  background: linear-gradient(180deg, #1f4e79, #244f73);
+  color: white;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left-panel .logo {
+  width: 500px;
+  height: 350px;
+  padding-bottom: 30px;
+}
+
+.left-panel h1 {
+  font-size: 40px;
+  line-height: 1.2;
+}
+
+.left-panel h1 span {
+  font-weight: 700;
+}
+
+.left-panel p {
+  margin: 20px 0;
+  font-size: 16px;
+  color: #dbe7f3;
+  max-width: 420px;
+}
+
+.stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.stats h2 {
+  color: #f5b301;
+  font-size: 32px;
+}
+
+.stats span {
+  font-size: 14px;
+  color: #dbe7f3;
+}
+
+/* RIGHT PANEL */
+.right-panel {
+  width: 50%;
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right-panel h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+label {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+button {
+  margin-top: 30px;
+  padding: 14px;
+  background: linear-gradient(180deg, #1f4e79, #244f73);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.95;
+}
+
+.error {
+  margin-top: 15px;
+  color: red;
+  font-size: 14px;
+}
+
+/* =========================
+   MOBILE RESPONSIVENESS
+========================= */
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .left-panel {
+    width: 100%;
+    padding: 40px 20px;
+    height: auto;
+    text-align: center;
+    align-items: center;
+  }
+
+  .left-panel .logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+    padding-bottom: 0px;
+  }
+
+  .left-panel h1 {
+    font-size: 28px;
+  }
+
+  .left-panel p {
+    font-size: 14px;
+    max-width: 100%;
+  }
+
+  /* Hide stats on very small screens to save space, or just wrap */
+  .stats {
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .stats h2 {
+    font-size: 24px;
+  }
+
+  .right-panel {
+    width: 100%;
+    padding: 40px 20px;
+    flex: 1;
+    /* Take remaining height */
+  }
+}

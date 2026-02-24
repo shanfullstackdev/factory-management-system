@@ -1,0 +1,428 @@
+/* =========================
+   RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #f5f7fb;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar {
+  width: 260px;
+  background: #1f2937;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  /* stack logo and text vertically */
+  align-items: center;
+  /* center horizontally */
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.brand img {
+  width: 120px;
+  /* bigger logo size */
+  margin-bottom: 12px;
+  /* space between logo and text */
+}
+
+.brand h5 {
+  margin: 0;
+  font-size: 18px;
+  /* slightly bigger company name */
+  font-weight: 600;
+  color: #facc15;
+  /* golden highlight */
+}
+
+.brand small {
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+
+.menu a {
+  display: block;
+  padding: 12px 20px;
+  color: #cbd5e1;
+  text-decoration: none;
+}
+
+.menu a.active,
+.menu a:hover {
+  background: #374151;
+  color: #facc15;
+  border-radius: 8px;
+}
+
+/* =========================
+   SIDEBAR FOOTER
+========================= */
+.sidebar-footer {
+  padding: 15px;
+}
+
+.admin {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background: #374151;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logout {
+  margin-top: 10px;
+  width: 100%;
+  background: none;
+  border: none;
+  color: #cbd5e1;
+  cursor: pointer;
+}
+
+.logout:hover {
+  color: #f87171;
+}
+
+/* =========================
+   CONTENT
+========================= */
+.content {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.subtitle {
+  color: #6b7280;
+}
+
+.header-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 0;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn-primary {
+  background: #1d4ed8;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #2563eb;
+}
+
+.btn-outline {
+  background: white;
+  border: 1px solid #d1d5db;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* =========================
+   PANELS
+========================= */
+.panel {
+  background: #fff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  margin-bottom: 20px;
+}
+
+/* =========================
+   TABLE
+========================= */
+.production-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.production-table th,
+.production-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.production-table th {
+  color: #374151;
+}
+
+.production-table tr:hover {
+  background: #f9fafb;
+}
+
+.production-table button {
+  background: #ef4444;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.production-table button:hover {
+  background: #dc2626;
+}
+
+/* =========================
+   MODAL OVERLAY (FIXED)
+========================= */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: opacity 0.25s ease;
+  z-index: 9999;
+}
+
+.modal.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* =========================
+   MODAL BOX
+========================= */
+.modal-box {
+  background: #fff;
+  width: 480px;
+  max-width: 95%;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  animation: modalFade 0.25s ease;
+}
+
+/* =========================
+   MODAL TEXT
+========================= */
+.modal-box h4 {
+  font-size: 20px;
+  margin-bottom: 18px;
+  color: #111827;
+}
+
+.modal-box label {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  display: block;
+  color: #374151;
+}
+
+/* =========================
+   INPUTS
+========================= */
+.modal-box input,
+.modal-box select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+.modal-box input:focus,
+.modal-box select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* =========================
+   TWO COLUMN ROW
+========================= */
+.modal-box .row {
+  display: flex;
+  gap: 12px;
+}
+
+/* =========================
+   TOTAL AMOUNT CARD
+========================= */
+.total {
+  background: #ecfdf5;
+  border: 1px solid #bbf7d0;
+  border-radius: 14px;
+  padding: 16px;
+  margin-top: 10px;
+}
+
+.total p {
+  font-size: 13px;
+  color: #047857;
+}
+
+.total h2 {
+  color: #059669;
+  font-size: 26px;
+}
+
+.total small {
+  color: #065f46;
+}
+
+/* =========================
+   MODAL ACTIONS
+========================= */
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.modal-actions button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes modalFade {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   MOBILE RESPONSIVENESS
+========================= */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+  }
+
+  .brand {
+    flex-direction: row;
+    gap: 15px;
+    padding: 0 0 15px 0;
+    width: 100%;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .brand img {
+    width: 40px;
+    margin-bottom: 0;
+  }
+
+  .brand div {
+    text-align: left;
+  }
+
+  .menu {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px 0;
+    gap: 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .menu a {
+    white-space: nowrap;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 8px 16px;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
+  .content {
+    padding: 15px;
+    width: 100%;
+  }
+
+  .header-actions {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .panel {
+    overflow-x: auto;
+    padding: 10px;
+  }
+
+  .production-table {
+    min-width: 600px;
+  }
+
+  /* Modal Mobile */
+  .modal-box {
+    width: 90%;
+    margin: 20px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .modal-box .row {
+    flex-direction: column;
+    gap: 0;
+  }
+}

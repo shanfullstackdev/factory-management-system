@@ -1,0 +1,369 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #f5f7fb;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+  background: #1f2937;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  /* stack logo and text vertically */
+  align-items: center;
+  /* center horizontally */
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.brand img {
+  width: 120px;
+  /* bigger logo size */
+  margin-bottom: 12px;
+  /* space between logo and text */
+}
+
+.brand h5 {
+  margin: 0;
+  font-size: 18px;
+  /* slightly bigger company name */
+  font-weight: 600;
+  color: #facc15;
+  /* golden highlight */
+}
+
+.brand small {
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+.menu a {
+  display: block;
+  padding: 12px 20px;
+  color: #cbd5e1;
+  text-decoration: none;
+}
+
+.menu a i {
+  margin-right: 10px;
+}
+
+.menu a.active,
+.menu a:hover {
+  background: #374151;
+  color: #facc15;
+  border-radius: 8px;
+}
+
+/* SIDEBAR FOOTER */
+.sidebar-footer {
+  padding: 15px;
+}
+
+.admin {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background: #374151;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.logout {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #cbd5e1;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.logout:hover {
+  color: #f87171;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn-primary {
+  background: #1d4ed8;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #2563eb;
+}
+
+.btn-outline {
+  background: white;
+  border: 1px solid #d1d5db;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* CONTENT */
+.content {
+  flex: 1;
+  padding: 30px;
+}
+
+.subtitle {
+  color: #6b7280;
+}
+
+.header-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.search {
+  width: 300px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+}
+
+/* PANELS */
+.panel {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+.panel h5 {
+  margin-bottom: 10px;
+}
+
+.empty-box {
+  text-align: center;
+  color: #6b7280;
+}
+
+/* TABLE */
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.employee-table th,
+.employee-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.employee-table th {
+  color: #374151;
+  font-weight: 600;
+}
+
+.employee-table td {
+  color: #1f2937;
+}
+
+.employee-table tr:hover {
+  background: #f9fafb;
+}
+
+.employee-table button {
+  background: #ef4444;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.employee-table button:hover {
+  background: #dc2626;
+}
+
+/* MODAL */
+.modal-bg {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .4);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box {
+  background: #fff;
+  width: 400px;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.modal-box h4 {
+  margin-bottom: 15px;
+}
+
+.modal-box input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.modal-actions button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-actions button:first-child {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.modal-actions button:first-child:hover {
+  background: #d1d5db;
+}
+
+.modal-actions .btn-primary {
+  background: #1d4ed8;
+  color: white;
+}
+
+.modal-actions .btn-primary:hover {
+  background: #2563eb;
+  /* lighter blue hover */
+}
+
+/* =========================
+   MOBILE RESPONSIVENESS
+========================= */
+@media (max-width: 768px) {
+
+  /* Using dashboard layout logic */
+  .app-container {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+  }
+
+  .brand {
+    flex-direction: row;
+    gap: 15px;
+    padding: 0 0 15px 0;
+    width: 100%;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .brand img {
+    width: 40px;
+    margin-bottom: 0;
+  }
+
+  .brand div {
+    text-align: left;
+  }
+
+  .menu {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px 0;
+    gap: 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .menu a {
+    white-space: nowrap;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 8px 16px;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
+  .content {
+    padding: 15px;
+    width: 100%;
+  }
+
+  /* Page Specifics */
+  .header-actions {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .search {
+    width: 100%;
+  }
+
+  .panel {
+    overflow-x: auto;
+    /* Scrollable table */
+    padding: 10px;
+  }
+
+  .employee-table {
+    min-width: 600px;
+    /* Ensure table doesn't squash */
+  }
+
+  /* Modal Mobile */
+  .modal-box {
+    width: 90%;
+    margin: 20px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+}

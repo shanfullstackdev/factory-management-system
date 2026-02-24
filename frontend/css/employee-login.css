@@ -1,0 +1,154 @@
+/* =========================
+   RESET & BASE
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Clean professional gradient: Slate/Blue */
+    background: linear-gradient(135deg, #f0f4f8 0%, #dbeafe 100%);
+    color: #1e293b;
+}
+
+/* =========================
+   LOGIN CARD
+========================= */
+.login-box {
+    background: #fff;
+    width: 100%;
+    max-width: 400px;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    text-align: center;
+    border: 1px solid #e2e8f0;
+}
+
+.login-box h2 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.login-box p {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+/* =========================
+   INPUTS & BUTTONS
+========================= */
+input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    background: #f8fafc;
+    font-size: 15px;
+    color: #1e293b;
+    transition: all 0.2s;
+    outline: none;
+}
+
+input:focus {
+    background: #fff;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+input::placeholder {
+    color: #94a3b8;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: #2563eb;
+    /* Primary Blue */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 10px;
+    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+}
+
+button:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 10px -1px rgba(37, 99, 235, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* =========================
+   OTP SECTION ANIMATION
+========================= */
+#otp,
+#verifyBtn {
+    animation: slideDown 0.4s ease-out forwards;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   MESSAGES
+========================= */
+#msg {
+    margin-top: 20px;
+    min-height: 20px;
+    font-weight: 500;
+    margin-bottom: 0px;
+}
+
+.error-text {
+    color: #ef4444;
+}
+
+.success-text {
+    color: #10b981;
+}
+
+@media (max-width: 600px) {
+    .login-box {
+        padding: 30px 20px;
+        margin: 20px;
+    }
+
+    .login-box h2 {
+        font-size: 22px;
+    }
+}

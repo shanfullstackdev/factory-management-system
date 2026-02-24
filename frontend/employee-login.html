@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Login | Ronak Jari Art</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <!-- Favicon -->
+  <link rel="icon" type="image/png" href="RJA.png">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/employee-login.css">
+</head>
+
+<body>
+
+  <div class="login-box">
+    <h2>Welcome Back</h2>
+    <p>Enter your mobile number to access dashboard</p>
+
+    <input id="mobile" type="tel" placeholder="Enter mobile number">
+
+    <button id="sendOtpBtn" onclick="sendOtp()">Send OTP</button>
+
+    <!-- OTP Section (Hidden initially) -->
+    <div id="otpSection" style="display: none;">
+      <input id="otp" type="text" placeholder="Enter 4-digit OTP" maxlength="4"
+        style="text-align: center; letter-spacing: 5px;">
+
+      <button id="verifyBtn" onclick="verifyOtp()">
+        Verify & Login
+      </button>
+    </div>
+
+    <p id="msg"></p>
+  </div>
+
+  <script src="js/employee-login.js"></script>
+
+  <!-- Small JS adjustment for better UI feedback -->
+  <script>
+    // Override the previous behavior slightly to handle UI state
+    const originalSendOtp = window.sendOtp; // Preserve original if needed, but we rely on existing logic
+
+    // We need to ensure the JS works with the new structure
+    // The existing js/employee-login.js shows elements by ID, so we need to match IDs
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Login | Ronak Jari Art</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="RJA.png">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/admin.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="login-container">
+
+  <!-- LEFT PANEL -->
+  <div class="left-panel">
+    <img src="RJA.png" class="logo" alt="Ronak Jari Art">
+
+    <h1>
+      RONAK JARI ART <br>
+      <span>FACTORY MANAGEMT SYSTEM</span>
+    </h1>
+
+    <p>
+      Streamline your factory operations with our comprehensive management
+      system. Track employees, production, and payments all in one place.
+    </p>
+
+    <div class="stats">
+      <div>
+        <h2>50+</h2>
+        <span>Employees</span>
+      </div>
+      <div>
+        <h2>10K+</h2>
+        <span>Productions</span>
+      </div>
+      <div>
+        <h2>99%</h2>
+        <span>Accuracy</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="right-panel">
+    <h2>Admin Login</h2>
+    <p class="subtitle">Enter your credentials to access the dashboard</p>
+
+    <label>username</label>
+    <input type="text" id="username" placeholder="admin@factory">
+
+    <label>Password</label>
+    <input type="password" id="password" placeholder="••••••••">
+
+    <button onclick="login()">Sign In</button>
+
+    <p id="msg" class="error"></p>
+  </div>
+
+</div>
+
+<!-- REQUIRED -->
+<script src="js/auth.js"></script>
+</body>
+</html>

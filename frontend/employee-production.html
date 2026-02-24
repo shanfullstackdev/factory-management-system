@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Submit Production | Ronak Jari Art</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="RJA.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/employee-production.css">
+</head>
+
+<body>
+
+  <!-- TOP NAV -->
+  <div class="top-bar">
+    <a href="index.html" class="back-link">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M19 12H5M12 19l-7-7 7-7" />
+      </svg>
+      Back to Home
+    </a>
+
+    <div class="nav-items mobile-hidden">
+      <a class="nav-link active" id="nav-submissions" onclick="switchTab('submissions')">My Submissions</a>
+      <a class="nav-link" id="nav-payments" onclick="switchTab('payments')">My Payments</a>
+    </div>
+
+    <div class="user-info">
+      <span id="welcomeText">Welcome!</span>
+      <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="page-wrapper">
+
+    <!-- LEFT: FORM CARD -->
+    <div class="card form-card">
+      <div class="icon-box">📊</div>
+      <h2>Submit Production</h2>
+      <p class="subtitle">Enter your production details for admin approval</p>
+
+      <form id="productionForm">
+        <div class="grid">
+          <div class="field">
+            <label>Date <span>*</span></label>
+            <input type="date" id="date" required max="">
+          </div>
+
+          <div class="field">
+            <label>Design Name</label>
+            <input type="text" id="designName" placeholder="Enter design name (optional)">
+          </div>
+
+          <div class="field">
+            <label>Pieces Produced (PS) <span>*</span></label>
+            <input type="number" id="ps" placeholder="Enter pieces count" min="1" required>
+          </div>
+
+          <div class="field">
+            <label>Rate per Piece (₹) <span>*</span></label>
+            <input type="number" id="rate" placeholder="Enter rate per piece" min="1" required>
+          </div>
+
+          <div class="field total-field">
+            <label>Total Amount</label>
+            <div class="total-display" id="totalDisplay">₹ 0</div>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">
+          <span>Submit Production Request</span>
+          <svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </button>
+
+        <p class="hint">Press <kbd>Enter</kbd> to submit</p>
+      </form>
+    </div>
+
+    <!-- RIGHT: HISTORY CARD -->
+    <div class="card history-card" id="submissionsCard">
+      <div class="history-header">
+        <h3>📋 My Submissions</h3>
+        <button class="refresh-btn" onclick="loadMyProductions()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-box pending">
+          <span class="stat-number" id="pendingCount">0</span>
+          <span class="stat-label">Pending</span>
+        </div>
+        <div class="stat-box approved">
+          <span class="stat-number" id="approvedCount">0</span>
+          <span class="stat-label">Approved</span>
+        </div>
+        <div class="stat-box total">
+          <span class="stat-number" id="totalEarnings">₹0</span>
+          <span class="stat-label">Earnings</span>
+        </div>
+      </div>
+
+      <div class="history-list" id="historyList">
+        <div class="loading">Loading...</div>
+      </div>
+    </div>
+
+    <!-- RIGHT BOTTOM: PAYMENTS CARD -->
+    <div class="card payment-card d-none" id="paymentsCard">
+      <div class="history-header">
+        <h3>💰 My Payments</h3>
+        <button class="refresh-btn" onclick="loadMyPayments()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-box approved"> <!-- Reusing styles -->
+          <span class="stat-number" id="totalPaid">₹0</span>
+          <span class="stat-label">Total Paid</span>
+        </div>
+      </div>
+
+      <div class="history-list" id="paymentList">
+        <div class="loading">Loading...</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/employee-production.js"></script>
+</body>
+
+</html>
