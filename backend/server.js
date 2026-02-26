@@ -51,7 +51,7 @@ app.get("/", (req, res) => {
    DATABASE CONNECTION
 ========================= */
 mongoose
-  .connect("mongodb+srv://factoryadmin:admin123@cluster0.fwlzng.mongodb.net/factoryDB?retryWrites=true&w=majority")
+  .connect("mongodb+srv://factoryDB:admin123@cluster0.fwlzng.mongodb.net/factoryDB?retryWrites=true&w=majority")
   .then(() => console.log("✅ MongoDB connected"))
   .catch(err => {
     console.error("❌ MongoDB connection failed");
